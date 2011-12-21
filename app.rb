@@ -7,7 +7,7 @@ require './partials'
 Dir["./models/**/*.rb"].each { |model| require model }
 
 class TheWordsThatDefineUs < Sinatra::Base
-	set :erb, :format => :html5
+	set :erb, format: :html5
 
 	helpers Sinatra::Partials
     helpers do
@@ -27,11 +27,26 @@ class TheWordsThatDefineUs < Sinatra::Base
     end
 
 	get '/' do
-		@words = []
+		@words = Word.all(sort:[[:created_at, :desc]])
 		erb :index
 	end
 
 	get '/application.css' do
 	  scss :application
+	end
+
+	get '/words/new' do
+		erb :'words/new', layout: :lightbox
+	end
+
+	post '/words/create.json' do
+		ws = Wordset.new(params[:words], context: params[:context], owner: params[:owner])
+		if ws.save
+			ws.words.map do |w|
+				partial(:'words/word', locals: { word: w })
+			end.join('\n')
+		else
+			404
+		end
 	end
 end

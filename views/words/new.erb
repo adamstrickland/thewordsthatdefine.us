@@ -1,16 +1,38 @@
 <div id="newword">
-	<form action="/words/create">
-		<div>
-			<label class="required">Word(s)</label>
-			<input type="text" name="words"/>
-		</div>
-		<div>
-			<label class="optional">Context</label>
-			<input type="text" name="context"/>
-		</div>
-		<div>
-			<label class="optional">Owner</label>
-			<input type="text" name="owner"/>
+	<header>
+		<h3>What Words Define You?</h3>
+	</header>
+	<form id="new_word_form" action="/words/create.json">
+		<div class="content">
+			<div>
+				<label class="required">Word(s)</label>
+				<br/>
+				<textarea name="words"></textarea>
+			</div>
+			<div>
+				<label class="optional">Context</label>
+				<br/>
+				<textarea name="context"></textarea>
+			</div>
+			<div>
+				<label class="optional">Owner</label>
+				<br/>
+				<textarea name="owner"></textarea>
+			</div>
+			<div class="buttonbar">
+				<input id="save" type="button" value="Save"/>
+			</div>
 		</div>
 	</form>
+	<footer></footer>
+	<script type="text/javascript">
+		$("#save").click(function(){
+			$.post($("#new_word_form").attr("action"), $("#new_word_form").serialize(),
+		      function(data) {
+		          $("#words table tbody").prepend(data);
+		          $.fancybox.close();
+		      }
+		    );
+		});
+	</script>
 </div>
