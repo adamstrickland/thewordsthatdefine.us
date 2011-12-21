@@ -1,4 +1,16 @@
-<p>
-The words that define us are many and varied.  They may change, but while they're in power, they grab you and hold you.  They monopolize our conversations, consume our days and otherwise just cause all sorts of problems.  Feel free to add yours to the list.
-</p>
-<p>--Adam & Renee</p>
+<div id="foreword">
+	<p>
+		The words that define us are many and varied.  They may change, but while they're in power, they grab you and hold you.  They monopolize our conversations, consume our days and otherwise just cause all sorts of problems.  Feel free to add yours to the list.
+	</p>
+	<p id="sig">--Adam &amp; Renee</p>
+</div>
+
+<div id="c2a">
+	<div class="bigbutton">
+		<a href="/words/new">What Words Define You?</a>
+	</div>
+</div>
+
+<div id="listing">
+	<%= partial(:'words/words', :locals => { :words => @words }) %>
+</div>

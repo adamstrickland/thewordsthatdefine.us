@@ -1,0 +1,16 @@
+<div id="words">
+	<table>
+		<thead>
+			<tr>
+				<th class="name">Word</th>
+				<th class="context">Context</th>
+				<th class="owner">Owner</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% words.each do |w| %>
+				<%= partial(:'words/word', :locals => { :word => w }) %>
+			<% end %>
+		</tbody>
+	</table>
+</div>

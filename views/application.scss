@@ -1,7 +1,117 @@
 html {
 	/*background-color: black*/
+	font-family:Helvetica, arial;
+	font-weight:400;
+	font-size:16px;
+
 	body {
 		color:white;
 		background:black url('/img/blackmamba.png') repeat right top;
+
+		#container {
+			width:50em;
+			margin:0 auto;
+			
+			header{
+				h1{
+					font-family: 'Qwigley', cursive;
+					font-weight:800;
+					font-size:4em;
+					text-align:center;
+				}
+			}
+
+			#main{
+				#foreword{
+					/*margin:0 2em;*/
+					p#sig{
+						text-align:right;
+					}
+				}
+
+				#c2a{
+					margin: 1em auto;
+					padding:2em 4em 0 4em;
+					.bigbutton{
+						background-color:gold;
+						-moz-border-radius: 15px;
+						border-radius: 15px;
+						text-align:center;
+						border:3px silver solid;
+						a{
+							text-decoration:none;
+							font-weight:bold;
+							font-size:2em;
+							color:black;
+							display:block;
+							cursor:hand;
+						}
+					}	
+				}
+
+				#listing{
+					#words{
+						padding-top:2em;
+						table{
+							border-collapse:collapse;
+							/*border-left:1px solid #686868;
+							border-right:1px solid #686868;*/
+							
+							td, th{
+								padding:5px;
+							}
+
+							caption{
+								padding:0 0 0.5em 0;
+								text-align:left;
+								font-size:1.4em;
+								font-weight:bold;
+								text-transform:uppercase;
+								background:transparent;
+							}
+
+							a{
+								text-decoration:none;
+							}
+
+							a:link{}
+
+							a:hover{
+								border-bottom:1px dashed #bbb;
+							}
+
+							thead{
+								border-bottom:1px dotted #333;
+								tr{
+									th.name{
+										width:15em;
+									}
+									th.context{
+										width:25em;
+									}
+									th.owner{
+										width:10em;
+									}
+								}
+							}
+							tbody{
+								overflow:scroll;
+								tr{
+									td, th{
+										border-bottom: dotted 1px #333;
+									}
+									th{
+										white-space:nowrap;
+									}
+								}
+								tr:hover{
+									background:#fafafa;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

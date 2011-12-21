@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sass'
+require 'partials'
 
 set :erb, :format => :html5
 

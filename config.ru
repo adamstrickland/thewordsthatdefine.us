@@ -1,2 +1,2 @@
-require './routes'
-run Sinatra::Application
+require './app'
+run TheWordsThatDefineUs
