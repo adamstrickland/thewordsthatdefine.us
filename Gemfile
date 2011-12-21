@@ -1,10 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'sinatra'
-gem 'haml'
+gem 'sass'
 gem 'thin'
 gem 'sinatra-mongoid', :require => 'sinatra/mongoid'
-gem 'bson_ext', '1.2.4'
+gem 'bson_ext'
 
 group :test do
 	gem 'rspec'
