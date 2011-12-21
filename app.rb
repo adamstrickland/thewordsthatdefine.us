@@ -17,9 +17,13 @@ class TheWordsThatDefineUs < Sinatra::Base
     end 
     
     Mongoid.configure do |config|
-    	if ENV['MONGOHQ_URL'] 
-    		conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
-    		uri = URI.parse(ENV['MONGOHQ_URL'])
+    	# mongo_url_key = 'MONGOHQ_URL'
+    	mongo_url_key = 'MONGOLAB_URI'
+    	mongo_url = ENV[mongo_url_key]
+
+    	if mongo_url
+    		conn = Mongo::Connection.from_uri(mongo_url)
+    		uri = URI.parse(mongo_url)
     		config.master = conn.db(uri.path.gsub(/^\//, ''))
     	else
     		config.master = Mongo::Connection.from_uri("mongodb://localhost:27017").db('test')

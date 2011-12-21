@@ -7,17 +7,17 @@
 			<div>
 				<label class="required">Word(s)</label>
 				<br/>
-				<textarea name="words"></textarea>
+				<textarea name="words" placeholder="Words, separated by commas"></textarea>
 			</div>
 			<div>
 				<label class="optional">Context</label>
 				<br/>
-				<textarea name="context"></textarea>
+				<textarea name="context" placeholder="Why/how are these word(s) significant?"></textarea>
 			</div>
 			<div>
 				<label class="optional">Owner</label>
 				<br/>
-				<textarea name="owner"></textarea>
+				<textarea name="owner" placeholder="Who are you?"></textarea>
 			</div>
 			<div class="buttonbar">
 				<input id="save" type="button" value="Save"/>
@@ -34,5 +34,6 @@
 		      }
 		    );
 		});
+		$("#newword .content textare[name='words']").focus();
 	</script>
 </div>
